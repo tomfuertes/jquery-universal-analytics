@@ -1,11 +1,6 @@
-/*
- * jquery-universal-analytics
- *
- *
- * Copyright (c) 2013 Tom Fuertes
- * Licensed under the MIT license.
- */
-
+/*! jquery-universal-analytics - v0.0.1 - 2013-12-06
+* https://github.com/tomfuertes/jquery-universal-analytics
+* Copyright (c) 2013 Tom Fuertes; Licensed MIT */
 (function ($) {
 
   /**
