@@ -1,0 +1,33 @@
+{
+  "name": "jquery-universal-analytics",
+  "version": "0.0.1",
+  "description": "jQuery Universal Analytics",
+  "keywords": [
+    "jquery-plugin"
+  ],
+  "homepage": "https://github.com/tomfuertes/jquery-universal-analytics",
+  "author": {
+    "name": "Tom Fuertes",
+    "email": "TomFuertes@gmail.com",
+    "url": "https://github.com/tomfuertes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomfuertes/jquery-universal-analytics.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-qunit": "~0.1.1",
+    "grunt-contrib-concat": "~0.1.2",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "time-grunt": "~0.1.1"
+  }
+}
