@@ -10,7 +10,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
-    banner: '/*! jquery.universal-analytics - v<%= pkg.version %> - ' +
+    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
@@ -25,8 +25,8 @@ module.exports = function (grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['src/universal-analytics.js'],
-        dest: 'dist/jquery.universal-analytics.js'
+        src: ['src/<%= pkg.name %>.js'],
+        dest: 'dist/<%= pkg.name %>.js'
       }
     },
     uglify: {
@@ -35,13 +35,13 @@ module.exports = function (grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/jquery.universal-analytics.min.js'
+        dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
     qunit: {
       all: {
         options: {
-          urls: ['http://localhost:9000/test/jquery.universal-analytics.html']
+          urls: ['http://localhost:9000/test/<%= pkg.name %>.html']
         }
       }
     },
