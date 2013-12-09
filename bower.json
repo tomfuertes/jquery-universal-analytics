@@ -1,7 +1,7 @@
 {
   "name": "jquery.universal-analytics",
   "version": "0.0.1",
-  "main": "dist/jquery.universal-analytics.min.js"
+  "main": "dist/jquery.universal-analytics.min.js",
   "devDependencies": {
     "qunit": "~1.12.0",
     "jquery": "~1.10.2"
