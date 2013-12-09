@@ -1,5 +1,5 @@
 /*
- * jquery-universal-analytics
+ * universal-analytics
  *
  *
  * Copyright (c) 2013 Tom Fuertes

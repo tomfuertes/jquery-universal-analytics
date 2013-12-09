@@ -1,7 +1,7 @@
 {
   "name": "jquery-universal-analytics",
   "version": "0.0.1",
-  "description": "jQuery Universal Analytics",
+  "description": "jQuery Universal Analytics Events",
   "keywords": [
     "jquery-plugin"
   ],

@@ -1,9 +1,22 @@
 {
   "name": "jquery-universal-analytics",
   "version": "0.0.1",
-  "dependencies": {},
+  "main": "dist/jquery.universal-analytics.min.js"
   "devDependencies": {
     "qunit": "~1.12.0",
     "jquery": "~1.10.2"
-  }
+  },
+  "homepage": "https://github.com/tomfuertes/jquery-universal-analytics",
+  "authors": [
+    "Tom Fuertes <tomfuertes@gmail.com>"
+  ],
+  "description": "jQuery Universal Analytics Events",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
