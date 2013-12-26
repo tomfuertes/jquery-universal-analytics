@@ -1,6 +1,6 @@
 # jQuery Universal Analytics
 
-The best jQuery plugin ever.
+Auto track forms and links with events in Universal Analytics.
 
 ## Getting Started
 
