@@ -63,6 +63,8 @@ ga('send', 'social', 'facebook', 'like', opt_target);
 ga('send', 'social', 'twitter', socialAction);
 ```
 
+Adapted from Google's [ga_social_tracking.js](http://goo.gl/3ejQan).
+
 ```javascript
 // psuedocode
 $.universalAnalytics.trackSocial = function (waitInSeconds) {

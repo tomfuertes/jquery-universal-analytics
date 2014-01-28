@@ -21,7 +21,8 @@
   // enable everything by default
   $.universalAnalytics.options = {
     trackLinks: true,
-    trackForms: true
+    trackForms: true,
+    trackSocial: true
   };
 
   /**
@@ -64,11 +65,10 @@
   };
 
   /**
-   * TODO: track social
+   * TODO: track social - adaptation of http://goo.gl/3ejQan
    * - Facebook
    * - Twitter
    */
-
   function trackFacebook() {
     /*global FB*/
     try {
