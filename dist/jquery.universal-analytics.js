@@ -1,6 +1,6 @@
-/*! jquery.universal-analytics - v0.0.2 - 2013-12-11
+/*! jquery.universal-analytics - v0.0.4 - 2014-01-27
 * https://github.com/tomfuertes/jquery-universal-analytics
-* Copyright (c) 2013 Tom Fuertes; Licensed MIT */
+* Copyright (c) 2014 Tom Fuertes; Licensed MIT */
 (function ($) {
 
   $.universalAnalytics = function (options) {
@@ -48,7 +48,7 @@
   $.universalAnalytics.trackForms = function () {
     function trackField() {
       var $this = $(this);
-      var form = $this.is('form') ? $this[0] : $(this).closest('form')[0];
+      var form = $this.is('form') ? $this[0] : $(this).closest('form')[0] || {};
       ga('send', 'event', 'Form Tracking',
         'form (' + (form.name || form.id || 'none') + ')', // action
         (this.name || this.id || this.type || this.nodeName) + ' (' + this.type + ')' // label
