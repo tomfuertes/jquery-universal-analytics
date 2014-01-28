@@ -56,6 +56,26 @@ jQuery(function($) {
 </form>
 ```
 
+### $.universalAnalytics.trackSocial()
+
+```javascript
+ga('send', 'social', 'facebook', 'like', opt_target);
+ga('send', 'social', 'twitter', socialAction);
+```
+
+```javascript
+// psuedocode
+$.universalAnalytics.trackSocial = function (waitInSeconds) {
+  try {
+  twttr.events.bind("click", trackTwitter('click'));
+  twttr.events.bind("tweet", trackTwitter('tweet'));
+  FB.Event.subscribe("edge.create", trackFacebook('like');
+  FB.Event.subscribe("edge.remove", trackFacebook('unlike');
+  FB.Event.subscribe("message.send", trackFacebook('send');
+  } catch(e) {}
+};
+```
+
 ## Examples
 
 ```html
@@ -67,17 +87,19 @@ jQuery(function($) {
   // Example 1
   $.universalAnalytics(); // activate all tracking
   
-  // Examples 2+3
+  // Examples 2, 3, 4
   $.universalAnalytics({
-    trackForms: false // track everything but forms
-  }); 
-  $.universalAnalytics({
-    trackLinks: false // track everything but links
+    trackForms: false, // disable form tracking
+    // trackLinks: false, // track everything but links
+    // trackSocial: false // track everything but Social
   }); 
   
   // Example 4
-  $.universalAnalytics.trackForms(); // track forms on this page
-  $.universalAnalytics.trackLinks(); // track links on this page
+  $.universalAnalytics.trackForms();    // track forms on this page
+  $.universalAnalytics.trackLinks();    // track links on this page
+  // $.universalAnalytics.trackTwitter();  // track twitter
+  // $.universalAnalytics.trackFacebook(); // track facebook
+  $.universalAnalytics.trackSocial();   // track all social
 
 });
 </script>
@@ -85,6 +107,10 @@ jQuery(function($) {
 
 ## Release History
 
+* **0.0.5 - 2014.01.27**
+  * Social Tracking
+* **0.0.4 - 2014.12.27**
+  * Bugfixes
 * **0.0.3 - 2013.12.XX**
   * Segment out
 * **0.0.2 - 2013.11.XX**
