@@ -69,6 +69,50 @@
    * - Twitter
    */
 
+  function trackFacebook() {
+    /*global FB*/
+    try {
+      FB.Event.subscribe("edge.create", function (opt_target) {
+        ga('send', 'social', 'facebook', 'like', opt_target);
+      });
+      FB.Event.subscribe("edge.remove", function (opt_target) {
+        ga('send', 'social', 'facebook', 'unlike', opt_target);
+      });
+      FB.Event.subscribe("message.send", function (opt_target) {
+        ga('send', 'social', 'facebook', 'send', opt_target);
+      });
+    } catch (e) {}
+  }
+  $.universalAnalytics.trackFacebook = trackFacebook;
+
+  function trackTwitter() {
+    function trackTwitterHandler(intent_event) {
+      if (intent_event && intent_event.type === "tweet" || intent_event.type === "click") {
+        var socialAction = intent_event.type + (intent_event.type === "click" ? "-" + intent_event.region : "");
+        ga('send', 'social', 'twitter', socialAction);
+      }
+    }
+
+    try {
+      /*global twttr*/
+      twttr.events.bind("click", trackTwitterHandler);
+      twttr.events.bind("tweet", trackTwitterHandler);
+    } catch (e) {}
+  }
+  $.universalAnalytics.trackTwitter = trackTwitter;
+
+  /**
+   * default track hook waits 5 seconds after window.onload
+   */
+  $.universalAnalytics.trackSocial = function (waitInSeconds) {
+    $(window).load(function () {
+      setTimeout(function () {
+        trackFacebook();
+        trackTwitter();
+      }, waitInSeconds || 5000);
+    });
+  };
+
   /**
    * TODO: track media
    * - html5
