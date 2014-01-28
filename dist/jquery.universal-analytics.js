@@ -1,4 +1,4 @@
-/*! jquery.universal-analytics - v0.0.5 - 2014-01-27
+/*! jquery.universal-analytics - v0.0.6 - 2014-01-27
 * https://github.com/tomfuertes/jquery-universal-analytics
 * Copyright (c) 2014 Tom Fuertes; Licensed MIT */
 (function ($) {
@@ -16,7 +16,8 @@
   // enable everything by default
   $.universalAnalytics.options = {
     trackLinks: true,
-    trackForms: true
+    trackForms: true,
+    trackSocial: true
   };
 
   /**
@@ -59,11 +60,10 @@
   };
 
   /**
-   * TODO: track social
+   * TODO: track social - adaptation of http://goo.gl/3ejQan
    * - Facebook
    * - Twitter
    */
-
   function trackFacebook() {
     /*global FB*/
     try {

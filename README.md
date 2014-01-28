@@ -109,6 +109,10 @@ jQuery(function($) {
 
 ## Release History
 
+TODO: Unit tests so tripple releases like 2014.01.27 don't happen
+
+* **0.0.6 - 2014.01.27**
+  * Maintain api
 * **0.0.5 - 2014.01.27**
   * Social Tracking
 * **0.0.4 - 2014.12.27**
