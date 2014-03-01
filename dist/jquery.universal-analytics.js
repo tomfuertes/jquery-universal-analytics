@@ -1,4 +1,4 @@
-/*! jquery.universal-analytics - v0.0.6 - 2014-01-27
+/*! jquery.universal-analytics - v0.0.7 - 2014-03-01
 * https://github.com/tomfuertes/jquery-universal-analytics
 * Copyright (c) 2014 Tom Fuertes; Licensed MIT */
 (function ($) {
@@ -27,17 +27,16 @@
    * - Outbound Links
    */
   $.universalAnalytics.trackLinks = function () {
-    $('document').on('mousedown', 'a', function () {
+    $(document).on('mousedown', 'a', function () {
       var $this = $(this);
-      var href = $this.prop('href').split('?')[0];
+      var href = ($this.prop('href') || '').split('?')[0];
       var ext = href.split('.').pop();
-      if ('xls,xlsx,doc,docx,ppt,pptx,pdf,txt,zip,rar,7z,exe,wma,mov,avi,wmv,mp3,csv,tsv'.split(',').indexOf(ext) !== -1) {
-        ga('send', 'event', 'Download', ext, href);
-      }
       if (href.toLowerCase().indexOf('mailto:') === 0) {
         ga('send', 'event', 'Mailto', href.substr(7));
       }
-      if ((this.protocol === 'http:' || this.protocol === 'https:') && this.hostname.indexOf(document.location.hostname) === -1) {
+      if ('xls,xlsx,doc,docx,ppt,pptx,pdf,txt,zip,rar,7z,exe,wma,mov,avi,wmv,mp3,csv,tsv'.split(',').indexOf(ext) !== -1) {
+        ga('send', 'event', 'Download', ext, href);
+      } else if ((this.protocol === 'http:' || this.protocol === 'https:') && this.hostname.indexOf(document.location.hostname) === -1) {
         ga('send', 'event', 'Outbound', this.hostname, this.pathname);
       }
     });
